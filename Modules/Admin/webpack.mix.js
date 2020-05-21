@@ -20,6 +20,8 @@ let tinymcePlugins = [
     'autolink',
     'wordcount',
     'code',
+    'image',
+    'media',
 ];
 
 tinymcePlugins.forEach(plugin => {

@@ -37,7 +37,6 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': FleetCart.csrfToken,
     },
 });
-
 $(document).on('preInit.dt', () => {
     $('.dataTables_length select').addClass('custom-select-black');
 });
