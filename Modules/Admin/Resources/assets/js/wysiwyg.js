@@ -10,8 +10,13 @@ tinyMCE.init({
     theme: 'modern',
     path_absolute : '/',
     file_browser_callback : function (field_name, url, type, win) {
-        let picker = new MediaPicker({ type: 'image', multiple: false });
-        console.log('SSSSSSSSSSSSSS',type);
+        let mediaType;
+        if (type === 'image') {
+            mediaType = type;
+        } else {
+            mediaType = null; 
+        }
+        let picker = new MediaPicker({ type: mediaType, multiple: false });
         picker.on('select', (file) => {
             $(`#${field_name}`).val(file.path);
         });
