@@ -24,7 +24,8 @@
 
 .media-picker-modal {
     padding-right: 0 !important;
-    z-index: 1050;
+    z-index: 99999999;
+    // z-index: 1050;
 
     > i {
         margin-right: 5px;

@@ -8,8 +8,14 @@ tinyMCE.baseURL = `${FleetCart.baseUrl}/modules/admin/js/wysiwyg`;
 tinyMCE.init({
     selector: '.wysiwyg',
     theme: 'modern',
-    images_upload_url: 'postAcceptor.php',
-    automatic_uploads: true,
+    path_absolute : '/',
+    file_browser_callback : function (field_name, url, type, win) {
+        let picker = new MediaPicker({ type: 'image', multiple: false });
+        console.log('SSSSSSSSSSSSSS',type);
+        picker.on('select', (file) => {
+            $(`#${field_name}`).val(file.path);
+        });
+    },
     mobile: { theme: 'mobile' },
     height: 300,
     branding: false,
